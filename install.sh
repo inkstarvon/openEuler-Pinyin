@@ -5,6 +5,9 @@
 # version: v1.0.0
 # Email: hello_linux@aliyun.com
 
+current_dir=$(cd $(dirname $0); pwd)
+echo '提示: 确保路径不存在中文,当前路径: :' $current_dir
+
 ## 安装配置
 Install(){
 #解决输入法依赖
@@ -27,9 +30,9 @@ Config(){
     sudo dnf install fcitx fcitx-configtool fcitx-qt5 fcitx-sunpinyin fcitx-libs sunpinyin  gnome-tweak-tool -y
     #开机启动fcitx
     sudo mkdir ~/.config/autostart
-    sudo cp fcitx.desktop ~/.config/autostart
+    sudo cp $current_dir/fcitx.desktop ~/.config/autostart
     #重启时生效 默认输入法修改
-    sudo cp fcitx.sh /etc/profile.d
+    sudo cp $current_dir/fcitx.sh /etc/profile.d
     #本地默认输入法
     echo 'export GTK_IM_MODULE=fcitx' >> ~/.bashrc
     echo 'export QT_IM_MODULE=fcitx' >> ~/.bashrc
