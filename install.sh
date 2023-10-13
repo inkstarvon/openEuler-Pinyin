@@ -24,10 +24,10 @@ Install(){
 ## fcitx安装配置
 Config(){
     #解决环境依赖性
-    sudo dnf install -y fcitx fcitx-pinyin fcitx-configtool gnome-tweak-tool
+    sudo dnf install fcitx fcitx-configtool fcitx-qt5 fcitx-sunpinyin fcitx-libs sunpinyin  gnome-tweak-tool -y
     #开机启动fcitx
-    mkdir ~/.config/autostart
-    cp fcitx.desktop ~/.config/autostart
+    sudo mkdir ~/.config/autostart
+    sudo cp fcitx.desktop ~/.config/autostart
     #重启时生效 默认输入法修改
     sudo cp fcitx.sh /etc/profile.d
     #本地默认输入法
