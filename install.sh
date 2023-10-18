@@ -31,7 +31,7 @@ function sogou(){
 ## fcitx安装配置
 function fcitx(){
     #解决环境依赖性
-    sudo dnf install fcitx fcitx-configtool fcitx-qt5 fcitx-sunpinyin fcitx-libs sunpinyin  -y # gnome-tweak-tool
+    sudo dnf install fcitx fcitx-configtool fcitx-qt5 fcitx-sunpinyin fcitx-libs sunpinyin  gnome-tweak-tool -y
     
 	#开机启动fcitx
     sudo mkdir $start_dir/.config/autostart
@@ -50,6 +50,15 @@ function fcitx(){
     echo "请重启计算机以生效！"
 }
 
+if [ "$1" == "fcitx" ];then
+    fcitx
+		exit 0
+fi
+
+if [ "$1" == "sougou" ];then
+    sougou
+		exit 0
+fi
 
 select choice in fcitx sougou
 do
