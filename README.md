@@ -9,13 +9,13 @@ openEuler拼音安装方法
 cd openEuler-Pinyin
 chmod +x *.sh
 ```
-2.如果你尚未安装fcitx(亦或你无法调用起fcitx),你可以使用如下命令,完成fcitx的配置安装(重启生效)
+2.如果你尚未安装fcitx(亦或你无法调用起fcitx),你可以使用如下命令,根据提示完成fcitx的配置安装(重启生效)
 ```
-./install.sh config
+./install.sh 
 ```
-3.如果你已经完成了fcitx的安装,并且可以使用它,请使用如下命令完成搜狗输入法的安装
+3.如果你已经完成了fcitx的安装,并且可以使用它,请使用如下命令根据提示完成搜狗输入法的安装
 ```
-./install.sh install
+./install.sh 
 ```
 ### 4.开机启动fcitx
 ```
