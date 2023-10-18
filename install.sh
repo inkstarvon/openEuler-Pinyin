@@ -7,9 +7,11 @@
 
 current_dir=$(cd $(dirname $0); pwd)
 echo '提示: 确保路径不存在中文,当前路径: :' $current_dir
+PS3='提示: 请输入序号并回车以开始: '
+echo $PS3
 
 ## 安装配置
-Install(){
+function sogou(){
 #解决输入法依赖
     sudo dnf install -y qtwebkit libidn-devel
     #解压和配置包 version: 2.3.1.0112
@@ -25,7 +27,7 @@ Install(){
 }
 
 ## fcitx安装配置
-Config(){
+function fcitx(){
     #解决环境依赖性
     sudo dnf install fcitx fcitx-configtool fcitx-qt5 fcitx-sunpinyin fcitx-libs sunpinyin  gnome-tweak-tool -y
     #开机启动fcitx
@@ -42,10 +44,17 @@ Config(){
     echo "请重启计算机以生效！"
 }
 
-if [ "$1" == "config" ];then
-    Config
-fi
 
-if [ "$1" == "install" ];then
-    Install
-fi
+select choice in fcitx sougou
+do
+    case "$choice" in
+        fcitx)
+            fcitx
+            ;;
+        sougou)
+            sogou
+            ;;
+    esac
+done
+
+
