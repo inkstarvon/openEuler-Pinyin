@@ -31,7 +31,7 @@ function sogou(){
 ## fcitx安装配置
 function fcitx(){
     #解决环境依赖性
-    sudo dnf install fcitx fcitx-configtool fcitx-qt5 fcitx-sunpinyin fcitx-libs sunpinyin  gnome-tweak-tool -y
+    sudo dnf install fcitx fcitx-configtool fcitx-qt5 fcitx-sunpinyin fcitx-libs sunpinyin  -y
     
 	#开机启动fcitx
     sudo mkdir $start_dir/.config/autostart
